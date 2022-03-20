@@ -1,0 +1,54 @@
+﻿@model CatalogoDeMusicas.Models.cadastro
+
+@{
+    ViewData["Title"] = "Editar Catálogo";
+}
+
+<h1 class="text-white">Editar Catálogo de Músicas</h1>
+
+<hr />
+<div class="row text-white">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TituloAlbum" class="control-label"></label>
+                <input asp-for="TituloAlbum" class="form-control" />
+                <span asp-validation-for="TituloAlbum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataLancamento" class="control-label"></label>
+                <input asp-for="DataLancamento" class="form-control" />
+                <span asp-validation-for="DataLancamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeArtista" class="control-label"></label>
+                <input asp-for="NomeArtista" class="form-control" />
+                <span asp-validation-for="NomeArtista" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeGenero" class="control-label"></label>
+                <input asp-for="NomeGenero" class="form-control" />
+                <span asp-validation-for="NomeGenero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataCadastro" class="control-label"></label>
+                <input asp-for="DataCadastro" class="form-control" />
+                <span asp-validation-for="DataCadastro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Preco" class="control-label"></label>
+                <input asp-for="Preco" class="form-control" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

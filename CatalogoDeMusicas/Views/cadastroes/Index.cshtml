@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CatalogoDeMusicas.Models.cadastro>
+
+@{
+    ViewData["Title"] = "Catálogo de Músicas";
+}
+
+<h1 class="text-white">Catálogo de Músicas</h1>
+
+<p>
+    <a class="nav-link text-white" asp-action="Create">Criar Novo Catálogo</a>
+</p>
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TituloAlbum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataLancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeArtista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeGenero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCadastro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TituloAlbum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataLancamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeArtista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeGenero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCadastro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                <a class="nav-link text-white" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a class="nav-link text-white" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a class="nav-link text-white" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
